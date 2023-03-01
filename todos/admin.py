@@ -1,5 +1,5 @@
 from django.contrib import admin
-from todos.models import TodoList
+from todos.models import TodoList, TodoItem
 
 
 # Register your models here.
@@ -9,3 +9,12 @@ class TodoListAdmin(admin.ModelAdmin):
         "name",
         "id",
     )
+
+
+@admin.register(TodoItem)
+class TodoItemAdmin(admin.ModelAdmin):
+    list = [
+        "task",
+        "due_date",
+        "is_completed",
+    ]

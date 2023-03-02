@@ -19,3 +19,6 @@ class TodoItem(models.Model):
         related_name="items",
         on_delete=models.CASCADE,
     )
+
+    def list_name(self):
+        return self.todolist.name
